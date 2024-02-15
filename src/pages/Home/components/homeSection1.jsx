@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import './section1.sass'
 import { Carousel } from 'flowbite-react';
 export const FirstSection = () => {
+
+
+
+    // * SECTION 3 SCRIPT
+
+    const [newPord, setNewProd] = useState(true)
+    const [oldPord, setOldProd] = useState(false)
+    const [sellPord, setSellProd] = useState(false)
+
+
     return (
         <>
             <div className="lg:h-[11vh] h-[0] "></div>
@@ -58,6 +69,122 @@ export const FirstSection = () => {
                         <div className="img6 w-[100%] h-[100%] "></div>
                     </div>
                 </div>
+            </div>
+
+            <div className="section3 flex flex-col items-center lg:px-[50px] lg:py-[40px] gap-[40px]  ">
+                <h1 className='text-[30px] font-bold  text-center' >FEATURED PRODUCTS</h1>
+                <div className="sec3Nav flex gap-[30px] text-[20px] font-bold cursor-pointer">
+                    <div onClick={() => { setNewProd(true); setOldProd(false); setSellProd(false) }} className=' '><p>New</p></div>
+                    <div onClick={() => { setNewProd(false); setOldProd(true); setSellProd(false) }} className=' '><p>old</p></div>
+                    <div onClick={() => { setNewProd(false); setOldProd(false); setSellProd(true) }} className=' '><p>sell</p></div>
+                </div>
+
+                <div className={`cardsContainerNew w-[100%] lg:h-[70vh] h-[370vh] flex lg:gap-0 gap-[20px] lg:flex-row flex-col justify-between ${newPord ? "flex" : "hidden"} `}>
+                    <div className="card  lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]    flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg1 h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>new</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg2  h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>new</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg3 h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>new</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg4  h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>new</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`cardsContainerOld w-[100%] lg:h-[70vh] h-[370vh] flex lg:gap-0 gap-[20px] lg:flex-row flex-col justify-between ${oldPord ? "flex" : "hidden"} `}>
+                    <div className="card  lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]    flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg5 h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>old</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg6  h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>old</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg7 h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>old</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg8  h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>old</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`cardsContainerSell w-[100%] lg:h-[70vh] h-[370vh] flex lg:gap-0 gap-[20px] lg:flex-row flex-col justify-between ${sellPord ? "flex" : "hidden"} `}>
+                    <div className="card  lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]    flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg9 h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>sell</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg10  h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>sell</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg11 h-[82%] lg:w-[100%] w-[100%] ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>sell</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                    <div className="card   lg:w-[calc(90%/4)] w-[100%] lg:h-[100%] h-[calc(100%/4)]   flex flex-col justify-between  lg:p-[0] p-[10px] ">
+                        <div className="cardImg12  h-[82%] lg:w-[100%] w-[100%]  ">
+                        </div>
+                        <div className="cardDesc">
+                            <p className='text-[18px] text-[#888888] '>old</p>
+                            <p className='text-[14px] text-[#888888] '>20.00$</p>
+                        </div>
+                    </div>
+                </div>
+
+                
             </div>
         </>
     );
