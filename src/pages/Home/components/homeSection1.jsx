@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import './section1.sass'
 import { Carousel } from 'flowbite-react';
 import { MyContext } from '../../../utils/contextProvider';
+import { motion } from "framer-motion"
 export const FirstSection = () => {
 
 
@@ -14,7 +15,7 @@ export const FirstSection = () => {
 
     const [productDataBase, setProductDatabase, product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12] = useContext(MyContext)
 
-    const [randomIdx , setRandomIdx]= useState(Math.floor(Math.random() * productDataBase.length))
+    const [randomIdx, setRandomIdx] = useState(Math.floor(Math.random() * productDataBase.length))
 
 
 
@@ -25,9 +26,35 @@ export const FirstSection = () => {
             <div className=" lg:h-[94vh] h-[80vh] w-[100%]">
                 <Carousel slideInterval={5000000} className=''>
                     <div className="slide1 bg-green-500 h-[100%] w-[100%] flex items-center lg:justify-center flex-col lg:gap-[30px]  lg:py-[0] py-[70px] justify-between text-center gap-[10px] text-white " >
-                        <p className='lg:text-[27px] text-[20px] '>Women Collection 2024</p>
-                        <h1 className='lg:text-[70px]  text-[38px] font-extrabold'>NEW ARRIVALS</h1>
-                        <button className='lg:w-[200px] w-[160px]  lg:h-[60px] h-[40px] lg:text-[20px] text-[15px] bg-white rounded-full text-black'>SHOP NOW</button>
+                        <motion.p
+                            className='lg:text-[27px] text-[20px]'
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                delay: `0.5`,
+                                duration: `1.5`
+                            }}
+                        >Women Collection 2024</motion.p>
+                        <motion.h1
+                            className='lg:text-[70px]  text-[38px] font-extrabold'
+                            initial={{ x: 100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                delay: `1`,
+                                duration: `1.5`
+
+                            }}
+                        >NEW ARRIVALS</motion.h1>
+                        <motion.button
+                            className='lg:w-[200px] w-[160px]  lg:h-[60px] h-[40px] lg:text-[20px] text-[15px] bg-white rounded-full text-black'
+                            initial={{ y: -100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                delay: `1.5`,
+                                duration: `1.5`
+
+                            }}
+                        >SHOP NOW</motion.button>
                     </div>
                     <div className="slide2 bg-green-500 h-[100%] w-[100%] flex items-center lg:justify-center flex-col lg:gap-[30px]  lg:py-[0] py-[70px] justify-between text-center gap-[10px] text-white " >
                         <p className='lg:text-[27px] text-[20px] '>Women Collection 2024</p>

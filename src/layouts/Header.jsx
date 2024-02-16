@@ -16,11 +16,10 @@ export const Header = () => {
                 </div>
                 <Navbar.Collapse>
                     <Navbar.Link className='text-[20px] text-[#333333] lg:ml-[50px] cursor-pointer '  onClick={() => navigate(`/`) }>Home</Navbar.Link>
-                    <Navbar.Link className='text-[20px] text-[#333333] lg:ml-[50px] cursor-pointer  ' onClick={() => navigate(``) }>Shop</Navbar.Link>
+                    <Navbar.Link className='text-[20px] text-[#333333] lg:ml-[50px] cursor-pointer  ' onClick={() => navigate(`/Shop`) }>Shop</Navbar.Link>
                     <Navbar.Link className='text-[20px] text-[#333333] lg:ml-[50px] cursor-pointer  ' onClick={() => navigate(`/About`) }>About</Navbar.Link>
                     <Navbar.Link className='text-[20px] text-[#333333] lg:ml-[50px] cursor-pointer  ' onClick={() => navigate(`/Contact`) }>Contact</Navbar.Link>
                 </Navbar.Collapse>
-                <div className="profil h-[50px] w-[50px] bg-gray-700  rounded-full "></div>
             </Navbar>
         </>
     );
