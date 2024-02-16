@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './section1.sass'
 import { Carousel } from 'flowbite-react';
+import { MyContext } from '../../../utils/contextProvider';
 export const FirstSection = () => {
 
 
@@ -10,6 +11,12 @@ export const FirstSection = () => {
     const [newPord, setNewProd] = useState(true)
     const [oldPord, setOldProd] = useState(false)
     const [sellPord, setSellProd] = useState(false)
+
+    const [productDataBase, setProductDatabase, product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12] = useContext(MyContext)
+
+    const [randomIdx , setRandomIdx]= useState(Math.floor(Math.random() * productDataBase.length))
+
+
 
 
     return (
@@ -36,7 +43,6 @@ export const FirstSection = () => {
             </div>
 
             <div className="section2 lg:py-[50px] py-[30px] lg:px-[60px] px-[10px] lg:h-[163vh] h-[489vh] flex justify-between lg:flex-row flex-col lg:gap-0 gap-[40px] ">
-
                 <div className="sec2Left lg:w-[calc(95%/3)] w-[100%] h-[calc(100%/3)] lg:h-[100%]  flex flex-col lg:justify-between  lg:gap-0 gap-[40px]  ">
                     <div className="sec2LeftTop h-[58%]   w-[100%] relative  overflow-hidden ">
                         <button className='flex items-center justify-center absolute bottom-7 left-[50%] m-auto z-10 -translate-x-[50%] lg:w-[220px] w-[140px] lg:h-[68px] h-[40px] lg:text-[20px] font-extralight bg-white  '>DRESSES</button>
@@ -73,10 +79,10 @@ export const FirstSection = () => {
 
             <div className="section3 flex flex-col items-center lg:px-[50px] lg:py-[40px] gap-[40px]  ">
                 <h1 className='text-[30px] font-bold  text-center' >FEATURED PRODUCTS</h1>
-                <div className="sec3Nav flex gap-[30px] text-[20px] font-bold cursor-pointer">
-                    <div onClick={() => { setNewProd(true); setOldProd(false); setSellProd(false) }} className=' '><p>New</p></div>
-                    <div onClick={() => { setNewProd(false); setOldProd(true); setSellProd(false) }} className=' '><p>old</p></div>
-                    <div onClick={() => { setNewProd(false); setOldProd(false); setSellProd(true) }} className=' '><p>sell</p></div>
+                <div className="sec3Nav flex lg:w-[60%] justify-between text-[28px] font-bold cursor-pointer lg:flex-row flex-col lg:gap-0 gap-[20px]">
+                    <div onClick={() => { setNewProd(true); setOldProd(false); setSellProd(false) }} className=' w-[160px] h-[50px] bg-[#e65540] text-[white] rounded-full flex justify-center items-center '><p>New</p></div>
+                    <div onClick={() => { setNewProd(false); setOldProd(true); setSellProd(false) }} className=' w-[160px] h-[50px] bg-[#e65540] text-[white] rounded-full flex justify-center items-center '><p>old</p></div>
+                    <div onClick={() => { setNewProd(false); setOldProd(false); setSellProd(true) }} className=' w-[160px] h-[50px] bg-[#e65540] text-[white] rounded-full flex justify-center items-center '><p>sell</p></div>
                 </div>
 
                 <div className={`cardsContainerNew w-[100%] lg:h-[70vh] h-[370vh] flex lg:gap-0 gap-[20px] lg:flex-row flex-col justify-between ${newPord ? "flex" : "hidden"} `}>
@@ -184,7 +190,19 @@ export const FirstSection = () => {
                     </div>
                 </div>
 
-                
+
+            </div>
+
+            <div className="section4 lg:p-[50px] p-[10px] lg:gap-0 gap-[20px] w-[100%] flex justify-between lg:flex-row flex-col ">
+                <div className="sec4left lg:w-[48%] w-[100%] p-[100px] bg-red-800 flex items-center justify-center flex-col gap-[20px] text-center text-nowrap text-white ">
+                    <h3 className='text-[30px]'>The Beauty</h3>
+                    <h1 className='text-[55px] font-bold  '>LOOKBOOK</h1>
+                    <h6 className='text-[26px]'>VIEW COLLECTION</h6>
+                </div>
+                <div className="sec4right lg:w-[48%] w-[100%] p-[px] flex flex-col items-center gap-[40px] ">
+                    <img src={productDataBase[randomIdx].img} alt="" className=' h-[400px] w-[100%] ' />
+                    <h1 className='text-[50px] font-bold '>{productDataBase[randomIdx].name}</h1>
+                </div>
             </div>
         </>
     );

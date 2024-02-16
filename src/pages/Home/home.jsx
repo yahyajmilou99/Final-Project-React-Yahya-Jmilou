@@ -7,7 +7,7 @@ export const HomePage = () => {
         <>
             <Header/>
             <FirstSection/>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     );
 }
